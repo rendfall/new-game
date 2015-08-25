@@ -3,8 +3,8 @@ export default {
         width: 1280,
         height: 800
     },
-    renderer: 'canvas',
-    container: '',
+    renderer: 'auto',
+    container: 'game',
     defaultState: null,
     transparent: false,
     antialias: true,

@@ -1,7 +1,7 @@
 import CONFIG from './Config.es6';
 
 // Import states
-import Stage1state from './../states/Stage1.es6';
+import Stage1State from './../states/Stage1.es6';
 
 export class Game {
     constructor() {
@@ -9,11 +9,17 @@ export class Game {
     }
 
     setup() {
-        let game = new Phaser.Game(CONFIG.map.width, CONFIG.map.height, Phaser[CONFIG.physics], Phaser[CONFIG.renderer]);
+        let game = new Phaser.Game(
+            CONFIG.map.width, 
+            CONFIG.map.height, 
+            Phaser[CONFIG.physics], 
+            CONFIG.container, 
+            Phaser[CONFIG.renderer]
+        );
 
         // Add states
         game.state.add('Boot', this.boot);
-        game.state.add('Stage1', Stage1state);
+        game.state.add('Stage1', Stage1State);
 
         // Go to Boot state
         game.state.start('Boot');
@@ -30,7 +36,7 @@ export class Game {
             create() {
                 // Setup world enviroment
 
-                // go to Stage1
+                // After all - go to Stage1
                 this.game.state.start('Stage1');
             }
         }
