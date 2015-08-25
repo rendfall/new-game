@@ -1,7 +1,8 @@
-# SpeedAddicted
+# New Game
 
 Development requirements:
 - npm,
+- babel,
 - webpack,
 - phaser,
-- httpster
+- httpster [optional]
