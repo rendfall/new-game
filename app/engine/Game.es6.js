@@ -26,17 +26,22 @@ export class Game {
     }
 
     boot() {
-        return {
-            preload() {
-                // Preload all assets
+        let player1;
+        let player2;
 
+        return {
+            // Preload all assets
+            preload() {
                 console.clear();
+
+                this.game.load.image('mario', 'app/assets/images/mario.png', 96, 96);
+                this.game.load.image('luigi', 'app/assets/images/luigi.png', 96, 96);
             },
 
+            // Setup world enviroment
             create() {
-                // Setup world enviroment
+                this.game.physics.startSystem(Phaser.Physics[CONFIG.physics]);    
 
-                // After all - go to Stage1
                 this.game.state.start('Stage1');
             }
         }
